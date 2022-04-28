@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+<h1><%=area%></h1>
+
+<h2>Categories:</h2>
+<!-- Loop though list of Foucs create <a> for each -->
+<% focus_data.forEach(function(focus){%>
+<div>
+  <a href="/area/<%=area%>/focus/<%=focus.name%>">
+    <h2><%= focus.name %></h2>
+  </a>
+</div>
+<%});%>
+
+<form class="item" action="/area/<%=area%>" method="post">
+  <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
+  <button type="submit" class="button" name="button">+</button>
+</form>

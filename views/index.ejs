@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+<main>
+  <form>
+    <input id="username" placeholder="username" />
+    <input id="password" placeholder="password" />
+    <button type="button" onclick="getInfo()">Login</button>
+    <button type="button" onclick="getInfo()">Register</button>
+  </form>
+  <body>
+    <h1>Knowledge Areas</h1>
+    <!-- /For each area in Areas .../ -->
+    <% areas_data.forEach(function(area){%>
+    <div>
+      <a href="/area/<%=area.name%>">
+        <h2><%= area.name %></h2>
+      </a>
+    </div>
+    <%});%>
+
+    <form class="item" action="/" method="post">
+      <input
+        type="text"
+        name="newItem"
+        placeholder="New Item"
+        autocomplete="off"
+      />
+      <button type="submit" class="button" name="button">+</button>
+    </form>
+  </body>
+</main>
